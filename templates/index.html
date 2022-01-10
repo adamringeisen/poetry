@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="https://unpkg.com/htmx.org@1.6.1"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet"> 
+<style>
+    /* Color palette used */
+    /* https://colorhunt.co/palette/eceff400ad7cfbd490475762 */
+
+    body {
+        background-color: #FBD490;
+    }
+    ul {
+        display: grid;
+	background-size: auto;
+        background-color: #00AD7C;
+        box-shadow: -10px 10px 5px black;
+        list-style: none;
+        font-family: 'Special Elite', cursive;
+        font-size:x-large;
+        max-width:max-content;
+        padding: 40px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        min-width: 30vw;
+        margin: auto;
+        text-align: left;            
+        justify-content: center ;
+        border-radius: 7px;
+    }
+    li {
+        line-height: 1;
+        background-color: #ECEFF4;
+        padding: 20px;
+        
+    }
+</style>
+</head>
+<body>
+<ul hx-get="/htmx" hx-trigger="load, click">
+
+
+</ul>
+</body>
+</html>

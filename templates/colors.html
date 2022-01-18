@@ -1,0 +1,16 @@
+{% extends 'color_index.html' %}
+
+{% block colorblock %}
+
+{% for color in colors %}
+{% if loop.last %}
+<li style ="color: rgb({{color[0]}},{{color[1]}},{{color[2]}});">LAST LOOP</li>
+    
+{% else %}
+<li style ="color: rgb({{color[0]}},{{color[1]}},{{color[2]}});">TEST COLOR</li>    
+
+{% endif %}
+
+{% endfor %}
+
+{% endblock %}

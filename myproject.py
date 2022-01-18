@@ -1,29 +1,18 @@
 from flask import Flask, json, render_template, jsonify
-from flask_sqlalchemy import SQLAlchemy
-from backend import *
+from backend import getMultiplePoems
+
 
 app = Flask(__name__)
 
-def getPoem(lines = 4):
-    poem = Poem()
-    return poem
 
 @app.route("/")
 def indexPoem():
     return render_template('index.html')
 
-@app.route("/api")
-def apiPoem():
-    poem = getPoem()
-    return jsonify(poem)
-
-@app.route("/htmx")
-def htmxRoute():
-    poem = getPoem()
-    return render_template('poem.html', poem=poem)
-
-
-
+@app.route('/mc')
+def poemsList():
+    poems = getMultiplePoems()
+    return render_template('poems_list.html', poems=poems)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
 import sqlite3
+import random
 
 def db_call(sql, sql_values):
     con = sqlite3.connect('database.db')
@@ -7,6 +8,13 @@ def db_call(sql, sql_values):
     result = cur.fetchall()
     return result
 
+def getPoem(lines = 4):
+    poem = Poem()
+    return poem
+
+def randomColor():
+    rc = random.choices(range(255), k=3)
+    return rc
 
 class Poem:
     sql = "SELECT eng_phrase, rowid FROM phrase ORDER BY random() LIMIT (?)"
@@ -16,6 +24,7 @@ class Poem:
         self.lines = []
         self.lineNums = []
         self.code = ""
+        self.color = randomColor()
         poemPrim = db_call(self.sql, self.sql_values)
         for i in poemPrim:
             self.lines.append(i[0])
@@ -30,4 +39,8 @@ def getMultiplePoems(num=10):
     for _ in range(num):
         multiplePoems.append(Poem())
     return multiplePoems
+
+
+
+
 

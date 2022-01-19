@@ -1,4 +1,4 @@
-from flask import Flask, json, render_template, jsonify
+from flask import Flask, render_template
 from backend import getMultiplePoems
 
 
@@ -8,6 +8,7 @@ app = Flask(__name__)
 @app.route("/")
 def indexPoem():
     return render_template('index.html')
+
 
 @app.route('/mc')
 def poemsList():

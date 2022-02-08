@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block main %}
+<ul style="background-color: rgb({{poem.color[0]}},{{poem.color[1]}},{{poem.color[2]}});">
+
+    {% for line in poem["lines"] %}
+    <li>{{line}} </li>
+    
+    {% endfor %}
+    </ul>
+{% endblock %}

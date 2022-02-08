@@ -1,22 +1,22 @@
 {% for poem in poems %}
     {% if loop.last %}
-        <ul hx-get="/mc" hx-trigger="revealed" hx-swap="afterend" style="background-color: rgb({{poem.color[0]}},{{poem.color[1]}},{{poem.color[2]}});">
-        {% for line in poem["lines"] %}
-
-        <li>{{line}} </li>
-        {% endfor %}
-        </ul>
-    
+        <div hx-get="/mc" hx-trigger="revealed" hx-swap="afterend"  class="box" style="background-color: rgb({{poem.color[0]}},{{poem.color[1]}},{{poem.color[2]}});"> 
+            <ul >
+                {% for line in poem["lines"] %}
+                    <li>{{line}} </li>
+                {% endfor %}
+            </ul>
+            <div class="info">permalink</div>
+        </div>
 {% else %}
-    
-<ul style="background-color: rgb({{poem.color[0]}},{{poem.color[1]}},{{poem.color[2]}});">
-
-{% for line in poem["lines"] %}
-<li>{{line}} </li>
-
-{% endfor %}
-</ul>
-
+<div class="box" style="background-color: rgb({{poem.color[0]}},{{poem.color[1]}},{{poem.color[2]}});">
+    <ul style="background-color: rgb({{poem.color[0]}},{{poem.color[1]}},{{poem.color[2]}});">
+        {% for line in poem["lines"] %}
+            <li>{{line}} </li>
+        {% endfor %}
+    </ul>
+    <div class="info"><a href="{{ url_for("onePoem", code=poem.code) }}">permalink</a></div>
+</div>
 {% endif %}
 
 {% endfor %}

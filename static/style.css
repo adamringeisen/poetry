@@ -3,25 +3,39 @@
 
         body {
             background-color: #FBD490;
+            display: grid;
+            justify-content: center;
         }
 
-        ul {
-            display: grid;
+        .box {
             background-size: auto;
-            /* background-color: #00AD7C; */
             box-shadow: -10px 10px 5px black;
+            max-width: 480px;
+            width: fit-content;
+            min-width: 30vw;
+            margin: 50px;
+            border-radius: 7px;
+            ;
+            
+            
+        }
+        .info {
+            text-align: center;
+            padding: 1rem;
+            background-color:#ECEFF4;
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+        ul {
+            /* background-color: #00AD7C; */
+            padding-bottom: 60px;
+            padding-top: 60px;
+            padding: 40px;
             list-style: none;
             font-family: 'Special Elite', cursive;
             font-size: x-large;
-            max-width: 480px;
-            padding: 40px;
-            padding-top: 60px;
-            padding-bottom: 60px;
-            min-width: 30vw;
-            margin: 50px;
             text-align: left;
-            justify-content: center;
-            border-radius: 7px;
+            margin: 0px;
         }
 
         li {

@@ -3,7 +3,7 @@ See it at [https://zerorg.com]
 ## Origin
 This is a flask web app that generates something, and depending on how loose your definition of 'poetry' is, it may indeed generate 'poetry'.
 
-This app started as a wierd google hole I used to climb in for fun where I would google 'How to learn English', but translated into other languages to see what language learning material looked like if you only knew the language being taught and not the language it was being taught *in*.
+This app started as a weird google hole I used to climb in for fun where I would google 'How to learn English', but translated into other languages to see what language learning material looked like if you only knew the language being taught and not the language it was being taught *in*.
 
 Eventually I came across a website which claimed to have the '1000 most common English phrases' and included their Chinese translation. After looking at the phrases I decided quickly that they were not the most common phrases by any stretch of the imagination and indeed some of them have probably never been spoken in English conversation at all. 
 

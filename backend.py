@@ -30,6 +30,8 @@ class Poem:
             lines = [lines[i] for i in linesOrder]
             self.lineList = lines
             self.lines = [line[0] for line in lines]
+            ucode = self.code.replace("-","_")
+            self.ucode = "U" + ucode
         else:
             self.lines = []
             self.lineNums = []
@@ -39,6 +41,8 @@ class Poem:
                 self.lines.append(i[0])
                 self.lineNums.append(i[1])
             self.code = "-".join(str(x) for x in self.lineNums)
+            ucode = self.code.replace("-","_")
+            self.ucode = "U" + ucode
 
     def __repr__(self) -> str:
         return f"Code = {self.code}\n Lines = {[str(line) for line in self.lines]}\n"

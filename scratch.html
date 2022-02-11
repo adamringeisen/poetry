@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch Test</title>
+    <script>
+        function showBar(div_id) {
+            const x = document.getElementById(div_id);
+            console.log(div_id)
+            if (x.style.display == 'none')
+                {
+                    x.style.display = "block";
+                    x.innerHTML = "Clicked!!!"
+                }
+            else 
+                {
+                x.style.display = "none";
+                }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="showBar('popout')">Click</button>
+    <ul onclick="showBar(popout)">
+        <li>Thing</li>
+        <li>Thing</li>
+        <li>Thing</li>
+        <li>Thing</li>
+        <li>Thing</li>
+        <li>Thing</li>
+        <li>Thing</li>
+        <li>Thing</li>
+    </ul>
+    <div id="popout" style="display: none;">This should hide.</div>
+    </div>
+</body>
+</html>

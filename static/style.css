@@ -2,11 +2,15 @@
         /* https://colorhunt.co/palette/eceff400ad7cfbd490475762 */
 
         body {
-            background-color: #FBD490;
+            background-color: #475762;
             display: grid;
             justify-content: center;
+            margin: 0px;
         }
-
+        .bg {
+            background-color: #FBD490;
+            min-width: 50vw;
+        }
         .box {
             background-size: auto;
             box-shadow: -10px 10px 5px black;
@@ -15,12 +19,12 @@
             min-width: 30vw;
             margin: 50px;
             border-radius: 7px;
-            ;
+            
             
             
         }
         .info {
-            text-align: center;
+            text-align: right;
             padding: 1rem;
             background-color:#ECEFF4;
             border-bottom-left-radius: 7px;

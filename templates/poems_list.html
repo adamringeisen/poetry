@@ -14,7 +14,10 @@
             <li>{{line}}</li>
             {% endfor %}
         </ul>
-        <div class="info" style="display: none;" id="{{ poem.ucode }}"><a href="{{ url_for("onePoem", code=poem.code)}}">permalink</a></div>
+        <div class="info" style="display: none;" id="{{ poem.ucode }}">
+            <a href="{{ url_for("onePoem", code=poem.code)}}">permalink</a>
+            
+            </div>
 
     </div>
 

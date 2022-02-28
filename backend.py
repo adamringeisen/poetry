@@ -33,6 +33,7 @@ class Poem:
             self.lineList = lines
             self.lines = [line[0] for line in lines]
             ucode = self.code.replace("-","_")
+            # js objects can't start with a number - not sure this is needed anymore though
             self.ucode = "U" + ucode
         else:
             self.lines = []

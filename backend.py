@@ -59,6 +59,6 @@ def getMultiplePoems(num=10):
         multiplePoems.append(Poem())
     return multiplePoems
 
-newP = Poem()
 
-print(newP.bbcode())
+
+

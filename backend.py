@@ -9,6 +9,13 @@ def db_call(sql, sql_values):
     result = cur.fetchall()
     return result
 
+def db_call_all(sql):
+    con = sqlite3.connect('database.db')
+    cur = con.cursor()
+    query = cur.execute(sql)
+    result = cur.fetchall()
+    return result 
+
 
 def randomColor():
     rc = random.choices(range(255), k=3)
@@ -58,6 +65,10 @@ def getMultiplePoems(num=10):
     for _ in range(num):
         multiplePoems.append(Poem())
     return multiplePoems
+
+def listAllPoems():
+    all_lines = db_call_all("SELECT eng_phrase, cn_phrase from phrase")
+    return all_lines
 
 
 

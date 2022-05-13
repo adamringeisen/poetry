@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from backend import getMultiplePoems, Poem
+from backend import getMultiplePoems, Poem, listAllPoems
 
 
 app = Flask(__name__)
@@ -21,6 +21,12 @@ def onePoem(code):
     poem = Poem(lineNums=id_list, code=code)
 
     return render_template('one_poem.html', poem=poem, id_list=id_list)
+
+@app.route('/list')
+def all_lines():
+    all_lines = listAllPoems()
+    return render_template('allPoems.html', all_lines=all_lines)
+
 
 
 if __name__ == "__main__":

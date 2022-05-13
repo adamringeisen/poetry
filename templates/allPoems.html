@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h2 style="font-family: 'Special Elite', cursive;align-items: center;">List of all lines</h2>
+<br />
+<br />
+<table>
+    <tr>
+      <th>#</th>
+      <th>English</th>
+      <th>Chinese</th>
+    </tr>
+     
+    
+    {% for line in all_lines %}
+
+            <tr>
+                <td>{{loop.index}}</td>
+                <td style="font-family: 'Special Elite', cursive;">{{line[0]}}</td>
+                <td>{{line[1]}}</td>
+            </tr>
+
+    {% endfor %}
+
+</table>
+
+
+
+{% endblock %}

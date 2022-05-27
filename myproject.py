@@ -27,7 +27,9 @@ def all_lines():
     all_lines = listAllPoems()
     return render_template('allPoems.html', all_lines=all_lines)
 
-
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

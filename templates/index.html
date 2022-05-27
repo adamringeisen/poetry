@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 
 {% block main %}
+<div class="topinfo" style="font-size:x-large">
+    <h1>Random "Poetry" Generator</h1>
+    <p>Click on a poem for a permalink.</p>
+    <div class="container">
+        <a href="/about"><h4 class="item">About</h4></a>
+
+        <a href="/list"><h4 class="item">All Lines</h4></a>
+    </div>
+    <div id="about" style="display: none;">Some Text</div>
+</div>
 <div class="main" hx-get="/mc" hx-trigger="load">
 </div>  
 {% endblock %}

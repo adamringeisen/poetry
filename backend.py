@@ -5,14 +5,16 @@ import random
 def db_call(sql, sql_values):
     con = sqlite3.connect('database.db')
     cur = con.cursor()
-    query = cur.execute(sql, sql_values)
+    cur.execute(sql, sql_values)
     result = cur.fetchall()
     return result
 
+
+    
 def db_call_all(sql):
     con = sqlite3.connect('database.db')
     cur = con.cursor()
-    query = cur.execute(sql)
+    cur.execute(sql)
     result = cur.fetchall()
     return result 
 
@@ -23,22 +25,19 @@ def randomColor():
 
 
 class Poem:
-    sql = "SELECT eng_phrase, rowid FROM phrase ORDER BY random() LIMIT (?)"
+    sql = "SELECT eng, rowid FROM new_table ORDER BY random() LIMIT (?)"
     sql_values = (4,)
 
     def __init__(self, **kwargs) -> None:
         self.color = randomColor()
         if kwargs:
             self.__dict__.update(kwargs)
-            discreteSQL = "SELECT eng_phrase FROM phrase WHERE rowid=(?) OR rowid=(?) OR rowid=(?) OR rowid=(?)"
-            lines = db_call(discreteSQL, self.lineNums)
-            # The db doesn't return the lines in order so we have to put them back
-            # This returns the relative order of the rowids (lineNums) [10,3,15,1] would become [2,1,3,0]
-            linesOrder = [sorted(self.lineNums).index(i) for i in self.lineNums]
-            # Sets order of lines according to the order passed in
-            lines = [lines[i] for i in linesOrder]
-            self.lineList = lines
-            self.lines = [line[0] for line in lines]
+            discreteSQL = "SELECT id, eng FROM new_table WHERE id IN (?,?,?,?)"
+            poem_object = db_call(discreteSQL, self.lineNums)
+            poem_dict = {x:y for x,y in poem_object}
+           
+            self.lines = [poem_dict.get(int(x)) for x in self.lineNums]
+           
             ucode = self.code.replace("-","_")
             # js objects can't start with a number - not sure this is needed anymore though
             self.ucode = "U" + ucode
@@ -73,3 +72,6 @@ def listAllPoems():
 
 
 
+testp = Poem()
+
+print(testp)

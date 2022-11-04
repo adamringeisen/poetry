@@ -71,7 +71,3 @@ def listAllPoems():
 
 
 
-
-testp = Poem()
-
-print(testp)
